@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html ng-app="mainApp">
 <head>
 	<title>Android Utils</title>
 	<meta charset="UTF-8">
 
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+	<!--		Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+	<script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.sticky-sidebar.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="route.js"></script>
+	<script>if (window.module) module = window.module;</script>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -22,12 +37,9 @@
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+	<script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
 
-
-
-</head>
-<body ng-app="mainApp">
-	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
@@ -37,42 +49,30 @@
 		<div class="header-warp">
 			<div class="header-bar-warp d-flex">
 				<!-- site logo -->
-				<a href="home.html" class="site-logo">
+				<a href="#!home" class="site-logo">
 					<img src="./img/logo.png" alt="">
 				</a>
 				<nav class="top-nav-area w-100">
 					<!-- Menu -->
 					<ul class="main-menu primary-menu">
-						<li><a href="home.html">Home</a></li>
-						<li><a href="games.html">Device Explorer</a></li>
-						<li><a href="review.html">APK Installer</a></li>
-						<li><a href="contact.html">About</a></li>
+						<li><a href="#!home">>Home</a></li>
+						<li><a href="#!device">>Device Explorer</a></li>
+						<li><a href="#!apk">>APK Installer</a></li>
+						<li><a href="#!about">>About</a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
 	</header>
-	<!-- Header section end -->
-
-
-	<!-- Hero section -->
-	<section class="hero-section overflow-hidden">
-		<div class="hero-slider owl-carousel">
-		</div>
-	</section>
-
-
-
-	<!--====== Javascripts & Jquery ======-->
-	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky-sidebar.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/main.js"></script>
-	<script>if (window.module) module = window.module;</script>
+</head>
+<body >
+<!--====== Javascripts & Jquery ======-->
+<p>
+	<p></p>
+<br></br>
+<br>
+<br>
+	<div ng-view></div >
 
 	</body>
 </html>
