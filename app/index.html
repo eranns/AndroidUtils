@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html ng-app="mainApp">
+<html >
 <head>
 	<title>Android Utils</title>
 	<meta charset="UTF-8">
 
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<!-- Controllers	-->
 
 	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 
 	<!--		Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
 	<script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.slicknav.min.js"></script>
@@ -19,7 +20,6 @@
 	<script src="js/jquery.sticky-sidebar.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="route.js"></script>
 	<script>if (window.module) module = window.module;</script>
 
 	<!-- Google Font -->
@@ -37,8 +37,9 @@
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
-	<script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+
+
+
 
 	<div id="preloder">
 		<div class="loader"></div>
@@ -55,17 +56,20 @@
 				<nav class="top-nav-area w-100">
 					<!-- Menu -->
 					<ul class="main-menu primary-menu">
-						<li><a href="#!home">>Home</a></li>
-						<li><a href="#!device">>Device Explorer</a></li>
-						<li><a href="#!apk">>APK Installer</a></li>
-						<li><a href="#!about">>About</a></li>
+						<li><a href="#!home">Home</a></li>
+						<li><a href="#!device">Device Explorer</a></li>
+						<li><a href="#!apk">APK Installer</a></li>
+						<li><a href="#!about">About</a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
 	</header>
 </head>
-<body >
+<body ng-app="mainApp">
+<script src="route.js"></script>
+<script src="home/home.js"></script>
+
 <!--====== Javascripts & Jquery ======-->
 <p>
 	<p></p>

@@ -1,11 +1,26 @@
-<body>
+<body ng-controller="homeController">
 <link rel="stylesheet" type="text/css" href="home/home.css">
+<script>
+    require('home.js')
+    window.nodeRequire = require;
+    delete window.require;
+    delete window.exports;
+    delete window.module;
+</script>
+
 <!-- load angular -->
+<div  class="container" >
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div class="devices" ng-repeat="d in devices">
+        {{d.vendor}}
+    </div>
+<!--    <p ng-bind="devices"></p>-->
+<!--    <h1 ng-bind="devices"></h1>-->
 
-<!-- menu -->
-
-<div ng-controller="homeController" class="container" >
-<h1> This is home</h1>
 
 
 </div>

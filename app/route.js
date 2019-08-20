@@ -1,6 +1,8 @@
-var app = angular.module('mainApp', ["ngRoute"]);
+// Define your global angular app var
+var app = angular.module('mainApp', ['ngRoute']);
+
 app.config(function($routeProvider)  {
-    "use strict";
+    // "use strict";
     $routeProvider
     // homepage
         .when('/', {
