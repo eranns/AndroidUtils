@@ -15,11 +15,24 @@
     <p></p>
     <p></p>
     <p></p>
-    <div class="devices" ng-repeat="d in devices">
-        {{d.vendor}}
+
+    <p><i id="refresh" class="w3-jumbo w3-spin fa fa-refresh"></i></p>
+
+
+    <div ng-show="isAvailable()" class="devices" ng-repeat="d in devices">
+        <div class="cards-list">
+            <div class="card" >
+                <div class="card_image"> <img id="{{d.id}}" src="https://binaryfortressdownloads.com/Download/WPF/Images/25703/WallpaperFusion-flat-design-forest-1680x480.jpg" ng-click="deviceClick($event)" > </div>
+                <div class="card_title title-white">
+                    <p>{{d.vendor}}</p>
+                </div>
+            </div>
+        </div>
     </div>
-<!--    <p ng-bind="devices"></p>-->
-<!--    <h1 ng-bind="devices"></h1>-->
+
+    <div ng-if="!isAvailable()"  class="no-devices" >
+        <h1> No devices found </h1>
+    </div>
 
 
 
