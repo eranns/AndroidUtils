@@ -6,7 +6,8 @@ var app=angular.module("mainApp").controller("homeController", function (deviceS
 
     $scope.devices =  deviceService.getAvilableDevices().then(function (result) {
         $scope.devices = result;
-        $scope.$digest()
+        $scope.$digest();
+        deviceService.initdir();
     }).catch(function(error){
         console.log(error);
     });
@@ -26,6 +27,7 @@ app.service('deviceService', function () {
     var currentdevice= "";
     var numberOfDevices=0;
     var currentdir='/storage/emulated/0/';
+    var dirarray="";
 
     this.getAvilableDevices = async function () {
         try{
@@ -54,13 +56,32 @@ app.service('deviceService', function () {
         return currentdir;
     };
 
+    this.initdir= async function(){
+        currentdir=await adb.getDirArray(currentdevice.id,currentdir);
+        k=5;
+
+    };
+    this.getdirarray=function(){
+        return dirarray;
+    }
+    this.setdirarray=function(dir){
+        try{
+
+            dirarray=dir;
+        }
+        catch{
+            throw new Error("dir was not found");
+        }
+    }
+
     this.setcurrentdir = function(dir){
         try{
             var currentdir=adb.getDirArray(currentdevice.id,dir);
+            setdirarray(currentdir);
 
         }
         catch{
-            throw "dir was not found";
+            throw new Error("dir was not found");
         }
 
     };

@@ -33,10 +33,11 @@ async function getProperties(deviceid){
     })
 }
 
-async function getdirArray(deviceid,path){
+function getdirArray(deviceid,path){
     //start path is /storage/emulated/0
-
-    client.readdir(deviceid, path)
+    return client.readdir(deviceid,path);
+    currentfiles=[];
+     client.readdir(deviceid, path)
         .then(function(files) {
             // Synchronous, so we don't have to care about returning at the
             // right time
@@ -52,7 +53,10 @@ async function getdirArray(deviceid,path){
                     // console.log(file);
                 }
             })
+
+
         });
+    return currentfiles;
 }
 module.exports.getDevices = getDevices;
 module.exports.getProPerties = getProperties;

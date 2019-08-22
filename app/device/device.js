@@ -1,8 +1,9 @@
-const {remote} = require('electron');
-const adb=remote.require('./sys/adb/adb');
 var app=angular.module("mainApp").controller("deviceController", function (deviceService, $scope) {
 
     $scope.showdir=deviceService.getcurrentdir();
+    addattributes();
+
+    console.log($scope.showdir);
     $scope.changedir=function(dir){
         try{
             deviceService.setcurrentdir(dir);
@@ -14,6 +15,17 @@ var app=angular.module("mainApp").controller("deviceController", function (devic
         }
 
     }
+
+
+
+    function addattributes(){
+        $scope.showdir.forEach(function (file) {
+            if (file.isFile()) {
+                file.directory = false;
+            } else {
+                file.directory = true;
+            }
+    })};
 
 
 

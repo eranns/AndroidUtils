@@ -1,4 +1,12 @@
-<body>
+<body ng-controller="deviceController">
+<link rel="stylesheet" type="text/css" href="device/device.css">
 
-<h1> "Device "</h1>
+<div class="listdirectory" ng-repeat="file in showdir">
+    <ul>
+        <li><a><img ng-if="file.directory" src="https://www.iconsdb.com/icons/download/orange/folder-7-24.png">"{{file.name}}</a></li>
+    </ul>
+
+</div>
+
+
 </body>
