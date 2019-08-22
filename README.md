@@ -2,7 +2,7 @@
 
 electron app that shows android files and directories from a device connected to your computer using adb.
 
-This project is based on  [adbkit api](npmjs.com/package/adbkit) 
+This project is based on  [adbkit(npm package) api](https://www.npmjs.com/package/adbkit/) 
 
 some examples : 
 
