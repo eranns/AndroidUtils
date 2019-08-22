@@ -1,8 +1,10 @@
 # AndroidUtils
 
-An example of electron app that shows android files and directories from a device connected to your computer.
+electron app that shows android files and directories from a device connected to your computer using adb.
 
-The project is based on adbkit - a package that communicate with adb client on android devices.
+This project is based on  [adbkit api](npmjs.com/package/adbkit) 
+
+some examples : 
 
 Showing connected devices
 
