@@ -36,7 +36,7 @@ async function getProperties(deviceid){
 async function getdirArray(deviceid,path){
     //start path is /storage/emulated/0
 
-    client.readdir(deviceid, '/storage/emulated/0/')
+    client.readdir(deviceid, path)
         .then(function(files) {
             // Synchronous, so we don't have to care about returning at the
             // right time

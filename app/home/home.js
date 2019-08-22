@@ -16,29 +16,23 @@ var app=angular.module("mainApp").controller("homeController", function (deviceS
     }
 
     $scope.deviceClick=function(event){
-        console.log(event)
         deviceService.setcurrentDevice(event.target.id);
-
-        console.log(deviceService.getcurrentDevice())
     }
 
 
 });
 
-
-
-
-
 app.service('deviceService', function () {
     var currentdevice= "";
     var numberOfDevices=0;
-    // console.log(await favourites.getDevices());
+    var currentdir='/storage/emulated/0/';
 
     this.getAvilableDevices = async function () {
         try{
             // console.log(await adb.getDevices());
             var result = await adb.getDevices();
             numberOfDevices=result.length;
+            currentdevice=result[0];
             return result;
         }
         catch (e) {
@@ -56,10 +50,22 @@ app.service('deviceService', function () {
     this.isConnected=function(){
         return numberOfDevices >0;
     }
+    this.getcurrentdir = function (){
+        return currentdir;
+    };
 
-    this.getProperties = async function(devices){
-    return "";
-    }
+    this.setcurrentdir = function(dir){
+        try{
+            var currentdir=adb.getDirArray(currentdevice.id,dir);
+
+        }
+        catch{
+            throw "dir was not found";
+        }
+
+    };
+
+
 
 });
 
