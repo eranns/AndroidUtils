@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "adbkit": "^2.11.1",
-    "angular": "^1.7.8",
+    "angular": "^1.8.0",
     "angular-route": "^1.7.8",
     "angularjs": "0.0.1",
     "bootstrap": "^4.3.1",
